@@ -18,36 +18,37 @@ namespace Sourav.Utilities.EditorScripts
             MethodInfo[] methods = type.GetMethods();
             for (int i = 0; i < methods.Length; i++)
             {
+                #region Button Attribute
                 ButtonAttribute attribute = (ButtonAttribute)Attribute.GetCustomAttribute(methods[i], typeof(ButtonAttribute));
-                if(attribute != null)
+                if (attribute != null)
                 {
-                    if(attribute.WorkMode == ButtonWorkType.Both)
+                    if (attribute.WorkMode == ButtonWorkType.Both)
                     {
                         DrawButtonAndInvokeMethod(attribute, methods[i]);
                     }
                     else
                     {
-                        if(Application.isPlaying)
+                        if (Application.isPlaying)
                         {
-                            if(attribute.WorkMode == ButtonWorkType.RunTimeOnly)
+                            if (attribute.WorkMode == ButtonWorkType.RunTimeOnly)
                             {
                                 DrawButtonAndInvokeMethod(attribute, methods[i]);
                             }
                         }
                         else
                         {
-                            if(attribute.WorkMode == ButtonWorkType.EditorOnly)
+                            if (attribute.WorkMode == ButtonWorkType.EditorOnly)
                             {
                                 DrawButtonAndInvokeMethod(attribute, methods[i]);
-                            }    
+                            }
                         }
                     }
                 }
+                #endregion
             }
 
             EditorGUILayout.Space();
             DrawDefaultInspector();
-
         }
 
         void DrawButtonAndInvokeMethod(ButtonAttribute attribute, MethodInfo methodInfo)
