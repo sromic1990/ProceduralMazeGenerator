@@ -197,8 +197,8 @@ MonoBehaviour:
     type: 2}
   Holder: {fileID: 1467555044}
   Algorithm: {fileID: 1008267341}
-  Width: 5
-  Height: 5
+  Width: 20
+  Height: 20
 --- !u!1 &1467555043
 GameObject:
   m_ObjectHideFlags: 0

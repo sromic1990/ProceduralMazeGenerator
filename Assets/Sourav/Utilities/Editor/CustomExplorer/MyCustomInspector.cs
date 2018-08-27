@@ -18,7 +18,6 @@ namespace Sourav.Utilities.EditorScripts
             MethodInfo[] methods = type.GetMethods();
             for (int i = 0; i < methods.Length; i++)
             {
-                #region Button Attribute
                 ButtonAttribute attribute = (ButtonAttribute)Attribute.GetCustomAttribute(methods[i], typeof(ButtonAttribute));
                 if (attribute != null)
                 {
@@ -44,7 +43,6 @@ namespace Sourav.Utilities.EditorScripts
                         }
                     }
                 }
-                #endregion
             }
 
             EditorGUILayout.Space();

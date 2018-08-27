@@ -14,7 +14,12 @@ public class GameManager : MonoBehaviour
     private Cell[,] Cells;
     private List<GameObject> CellObjects = new List<GameObject>();
 
-    [Button("",ButtonWorkType.RunTimeOnly)]
+    private void Start()
+    {
+        //GenerateGrid();
+    }
+
+    [Button()]
     public void GenerateGrid()
     {
         DestroyAnyPreviousCells();
